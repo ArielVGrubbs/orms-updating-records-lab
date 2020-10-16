@@ -78,7 +78,7 @@ describe "Student" do
     it 'creates an instance with corresponding attribute values' do
       row = [1, "Pat", 12]
       pat = Student.new_from_db(row)
-
+      # binding.pry
       expect(pat.id).to eq(row[0])
       expect(pat.name).to eq(row[1])
       expect(pat.grade).to eq(row[2])
@@ -90,6 +90,7 @@ describe "Student" do
       josh.save
       josh_id = josh.id
       josh_from_db = Student.find_by_name("Josh")
+      # binding.pry
       expect(josh_from_db.name).to eq("Josh")
       expect(josh_from_db.grade).to eq("9th")
       expect(josh_from_db.id).to eq(josh_id)
